@@ -1,0 +1,2 @@
+# squindex
+squash indexer
