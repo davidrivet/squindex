@@ -31,7 +31,7 @@ class App {
         //https://tools.akio.fr/squash/backend/test-case-view/21547?frontEndErrorIsHandled=true
     }
 
-    static void fetchTestCases(String folderUrl, 
+    static void fetchTestCases(String folderUrl,
     List<String> fetchedTestCaseFolderUrls, List<String> fetchedTestCaseUrls,
     List<TestCase> testCases) {
         def view = SquashService.fetchFolderView(folderUrl)
