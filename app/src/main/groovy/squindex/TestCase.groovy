@@ -1,0 +1,4 @@
+package squindex
+
+class TestCase {
+}

@@ -1,0 +1,76 @@
+{
+    "id": 21508,
+    "projectId": 1,
+    "name": "1 - NR rapide",
+    "description": "<p>L&#39;<strong>objectif du plan de test NRR</strong> est de regrouper les tests de non r&eacute;gression que l&#39;on passe syst&eacute;matiquement sur chaque version en un minimum de cas de test. Ces cas de tests rentrent moins dans le d&eacute;tail&nbsp;que les autres tests standards du plan de test de non r&eacute;gression. Lors d&#39;une passe de non r&eacute;gression, ils ont donc vocation &agrave; &ecirc;tre pass&eacute;s syst&eacute;matiquement (en compl&eacute;ment des cas de non r&eacute;gression standards que l&#39;on s&eacute;lectionne en fonction des stories et tickets trait&eacute;s sur la version).</p>\n\n<p>A noter aussi que ces cas de tests NRR ont &eacute;t&eacute; &eacute;tablis en prenant en compte les fonctionnalit&eacute;s d&eacute;j&agrave; test&eacute;es via les TF.</p>\n\n<p>Voici le doc r&eacute;f&eacute;ren&ccedil;ant les fonctionnalit&eacute;s qui nous a servi &agrave; construire la NRR :&nbsp;<a href=\"https://docs.google.com/spreadsheets/d/15YWi56UmeCV0XiVYNNnA37p9aWrsQhE4TeCpbmvTqzU/edit#gid=0\">https://docs.google.com/spreadsheets/d/15YWi56UmeCV0XiVYNNnA37p9aWrsQhE4TeCpbmvTqzU/edit#gid=0</a></p>\n\n<p>&nbsp;</p>\n\n<p><strong>Recommandations d&#39;usage</strong></p>\n\n<p>- Ces cas de test rentrent moins dans le d&eacute;tail&nbsp;car ils ont &eacute;t&eacute; construits en partant du principe que lors de leur passage, il faut bien pr&ecirc;ter attention &agrave; l&#39;UI et aux &eacute;crans utilis&eacute;s (bien faire attention que tous les &eacute;l&eacute;ments constitutifs de l&#39;&eacute;cran soient pr&eacute;sents, qu&#39;il&nbsp;n&#39;y ait&nbsp;pas de probl&egrave;me&nbsp;d&#39;affichage, etc...). De plus, la partie UI n&#39;&eacute;tant pas vraiment test&eacute;e avec les TU/TI/TF, c&#39;est lors des tests manuels que l&#39;on a le plus de chance de d&eacute;tecter ce genre de bugs.</p>\n\n<p>- Passer certains tests en utilisant la r&eacute;solution minimale support&eacute;e par l&rsquo;application : 1280 x 1024 px (on ne pr&eacute;cise pas pour quels cas, mais &ccedil;a sera &agrave; faire globalement) ; le but est de s&rsquo;assurer qu&rsquo;aucun probl&egrave;me d&rsquo;affichage ne survienne avec cette r&eacute;solution (d&eacute;calage d&rsquo;&eacute;l&eacute;ments, &eacute;l&eacute;ments en partie ou totalement cach&eacute;s, etc...).</p>\n\n<p>- Bien v&eacute;rifier les logs de la partie de l&#39;application test&eacute;e.</p>\n\n<p>- Panacher les tests entre les diff&eacute;rents navigateurs support&eacute;s par Unified : IE11, Edge, Firefox ESR 68 et la derni&egrave;re en date de Chrome.</p>\n\n<p>- Panacher les tests avec des utilisateurs fran&ccedil;ais et anglais.</p>\n\n<p>- Id&eacute;alement, r&eacute;partir les tests entre la plateforme Unified testrd NR qu&#39;on utilise habituellement, une plateforme migr&eacute;e (depuis la version pr&eacute;c&eacute;dente de l&#39;application dans la plupart des cas) et une autre plateforme sur laquelle on a fait une installation from scratch.</p>\n\n<p>- Id&eacute;alement, r&eacute;partir les tests d&#39;un m&ecirc;me sujet sur les diff&eacute;rents testeurs</p>\n\n<p>&nbsp;</p>\n\n<p><strong>Liste des tests NRR suivant it&eacute;ration</strong></p>\n\n<p>Une trame de test NRR par it&eacute;ration est propos&eacute;e.<br />\nLes tests sont donc plac&eacute; dans diff&eacute;rents r&eacute;pertoires:</p>\n\n<ul>\n\t<li>All It&eacute;rations: Tests &agrave; effectuer &agrave; chaque it&eacute;ration</li>\n\t<li>It&eacute;ration1: Tests &agrave; effectuer lors de la NR de l&#39;it&eacute;ration1</li>\n\t<li>It&eacute;ration2: Tests &agrave; effectuer lors de la NR de l&#39;it&eacute;ration2</li>\n\t<li>It&eacute;ration3: Tests &agrave; effectuer uniquement lors de la NR de l&#39;it&eacute;ration3</li>\n</ul>\n\n<p>Donc voici les tests &agrave; prendre suivants les it&eacute;rations:</p>\n\n<ul>\n\t<li>NR X.Y.1:\n\t<ul>\n\t\t<li>All it&eacute;rations + It&eacute;ration1</li>\n\t</ul>\n\t</li>\n\t<li>NR X.Y.2:\n\t<ul>\n\t\t<li>All it&eacute;rations + It&eacute;ration2</li>\n\t</ul>\n\t</li>\n\t<li>NR X.Y.3:\n\t<ul>\n\t\t<li>All it&eacute;rations + It&eacute;ration1 + It&eacute;ration2 + It&eacute;ration3</li>\n\t</ul>\n\t</li>\n</ul>\n\n<p><u>Note:</u> Ceci est une trame de tests &agrave; s&eacute;lectionner. En r&eacute;union p&egrave;rim&egrave;tre NR, rien n&#39;emp&ecirc;che d&#39;ajouter des tests d&#39;un autre r&eacute;pertoire suivant les d&eacute;veloppements effectu&eacute;s pendant l&#39;it&eacute;ration pass&eacute;.</p>\n\n<p>Les tests ont &eacute;t&eacute; plac&eacute;s en diff&eacute;rents r&eacute;pertoires en suivant ce tableau: <a href=\"https://docs.google.com/spreadsheets/d/1dGP5QMz85UGgNjDh2P51Xvv131IadLf3/edit?usp=sharing&amp;ouid=113105687939150227077&amp;rtpof=true&amp;sd=true\" target=\"_blank\">NRR_split</a></p>\n",
+    "attachmentListId": 220858,
+    "attachmentList": {
+        "id": 220858,
+        "attachments": []
+    },
+    "customFieldValues": [],
+    "path": "Unified - Test R&D - Q.A - Version en cours > QA T.N.R - Plans de non régression > T.N.R - Unified 7.32",
+    "statistics": {
+        "boundRequirementsStatistics": {
+            "zeroRequirements": 29,
+            "oneRequirement": 1,
+            "manyRequirements": 1
+        },
+        "importanceStatistics": {
+            "veryHigh": 31,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+        },
+        "statusesStatistics": {
+            "workInProgress": 0,
+            "underReview": 0,
+            "approved": 31,
+            "obsolete": 0,
+            "toBeUpdated": 0
+        },
+        "sizeStatistics": {
+            "zeroSteps": 0,
+            "between0And10Steps": 9,
+            "between11And20Steps": 19,
+            "above20Steps": 3
+        },
+        "selectedIds": [
+            21510,
+            21511,
+            21512,
+            21515,
+            21516,
+            21518,
+            44110,
+            21519,
+            21520,
+            21521,
+            21522,
+            33810,
+            21523,
+            21524,
+            21525,
+            21527,
+            21529,
+            21531,
+            21532,
+            33820,
+            33821,
+            33824,
+            33825,
+            33827,
+            33829,
+            33830,
+            33832,
+            32236,
+            33846,
+            40631,
+            26233
+        ]
+    },
+    "dashboard": null,
+    "shouldShowFavoriteDashboard": false,
+    "canShowFavoriteDashboard": false,
+    "favoriteDashboardId": null
+}

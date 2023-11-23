@@ -1,0 +1,152 @@
+{
+    "id": 21547,
+    "projectId": 1,
+    "name": "Après une installation de plateforme, la toute première connexion se fait avec l'utilisateur \"STARTADM\" [NRR.010]",
+    "reference": "ADM.CON.010",
+    "importance": "MEDIUM",
+    "status": "APPROVED",
+    "nature": 12,
+    "type": 32,
+    "description": "",
+    "importanceAuto": false,
+    "automatable": "M",
+    "prerequisite": "",
+    "automationRequest": null,
+    "testSteps": [
+        {
+            "id": 59931,
+            "stepOrder": 0,
+            "testCaseId": 21547,
+            "action": "<p>Apr&egrave;s une installation from scratch, se connecter sur la page suivante avec le compte&nbsp;STARTADM / STARTADM :</p>\n\n<p>https://monserver/akio-cim-admin/login/loginPage.jsp</p>\n",
+            "expectedResult": "<p>La connexion est autoris&eacute;e car il n&#39;existe pas encore d&#39;autre&nbsp;compte&nbsp;de type administrateur</p>\n",
+            "verifiedRequirements": null,
+            "customFieldValues": [],
+            "attachmentList": {
+                "id": 221267,
+                "attachments": []
+            },
+            "attachmentListId": 221267,
+            "kind": "action-step"
+        },
+        {
+            "id": 59932,
+            "stepOrder": 1,
+            "testCaseId": 21547,
+            "action": "<p>- Cr&eacute;er le premier tenant</p>\n\n<p>- Cr&eacute;er le premier administrateur Adm1 : renseigner son nom, pr&eacute;nom, adresse email, login et&nbsp;mot de passe</p>\n\n<p>- Se connecter sur la partie Admin avec cet administrateur Adm1</p>\n",
+            "expectedResult": "<p>L&#39;administrateur Adm1 est connect&eacute; sur Admin ; il peut aller r&eacute;cup&eacute;rer l&#39;uuid du premier tenant afin d&#39;ajouter la premi&egrave;re&nbsp;licence</p>\n",
+            "verifiedRequirements": null,
+            "customFieldValues": [],
+            "attachmentList": {
+                "id": 221268,
+                "attachments": []
+            },
+            "attachmentListId": 221268,
+            "kind": "action-step"
+        },
+        {
+            "id": 59933,
+            "stepOrder": 2,
+            "testCaseId": 21547,
+            "action": "<p>Retenter de nouveau de&nbsp;se connecter sur la page suivante avec le compte&nbsp;STARTADM / STARTADM :</p>\n\n<p>https://monserver/akio-cim-admin/login/loginPage.jsp</p>\n",
+            "expectedResult": "<p>La connexion est refus&eacute;e ; il n&#39;est plus possible de se connecter avec le compte STARTADM suite &agrave; la cr&eacute;ation du premier administrateur de la plateforme</p>\n",
+            "verifiedRequirements": null,
+            "customFieldValues": [],
+            "attachmentList": {
+                "id": 221269,
+                "attachments": []
+            },
+            "attachmentListId": 221269,
+            "kind": "action-step"
+        }
+    ],
+    "milestones": [],
+    "customFieldValues": [
+        {
+            "id": 571512,
+            "boundEntityId": 21547,
+            "cufId": 14,
+            "value": "false",
+            "fieldType": "CF"
+        },
+        {
+            "id": 571511,
+            "boundEntityId": 21547,
+            "cufId": 11,
+            "value": "",
+            "fieldType": "CF"
+        },
+        {
+            "id": 571510,
+            "boundEntityId": 21547,
+            "cufId": 10,
+            "value": "",
+            "fieldType": "CF"
+        },
+        {
+            "id": 571509,
+            "boundEntityId": 21547,
+            "cufId": 9,
+            "value": "false",
+            "fieldType": "CF"
+        },
+        {
+            "id": 571507,
+            "boundEntityId": 21547,
+            "cufId": 6,
+            "value": "",
+            "fieldType": "CF"
+        },
+        {
+            "id": 571506,
+            "boundEntityId": 21547,
+            "cufId": 2,
+            "value": "",
+            "fieldType": "CF"
+        },
+        {
+            "id": 571508,
+            "boundEntityId": 21547,
+            "cufId": 7,
+            "value": "",
+            "fieldType": "RTF"
+        },
+        {
+            "id": 833841,
+            "boundEntityId": 21547,
+            "cufId": 15,
+            "value": "",
+            "fieldType": "TAG"
+        }
+    ],
+    "parameters": [],
+    "datasets": [],
+    "datasetParamValues": [],
+    "coverages": [],
+    "attachmentListId": 221266,
+    "attachmentList": {
+        "id": 221266,
+        "attachments": []
+    },
+    "uuid": "447dfdcc-6a0e-4bfe-8e87-9e26d515e0fb",
+    "automatedTest": null,
+    "executions": [],
+    "nbIssues": 0,
+    "calledTestCases": [],
+    "createdOn": "2020-01-28T09:45:01.667+00:00",
+    "createdBy": "cdal",
+    "lastModifiedOn": "2020-12-07T15:19:19.007+00:00",
+    "lastModifiedBy": "abev",
+    "executionMode": "MANUAL",
+    "lastExecutionStatus": "",
+    "nbExecutions": 0,
+    "script": null,
+    "scriptedTestCaseId": null,
+    "keywordTestCaseId": null,
+    "actionWordLibraryActive": false,
+    "automatedTestReference": null,
+    "automatedTestTechnology": null,
+    "scmRepositoryId": null,
+    "configuredRemoteFinalStatus": null,
+    "path": "Unified - Test R&D - Q.A - Version en cours > QA T.N.R - Plans de non régression > T.N.R - Unified 7.32 > Admin > 01 - Connexion",
+    "kind": "STANDARD"
+}
