@@ -3,8 +3,7 @@
  */
 package squindex
 
-import groovy.json.JsonSlurper
-import squindex.api.FolderViewResponse
+
 import squindex.api.TestCaseViewResponse
 import squindex.service.SquashService
 import squindex.service.WrapperService
@@ -16,7 +15,8 @@ class App {
 
     static void main(String[] args) {
         println new App().greeting
-        String topLevelTestFolder;
+        // * T.N.R - Unified 7.33
+        String topLevelTestFolder = "https://tools.akio.fr/squash/backend/test-case-folder-view/14527?frontEndErrorIsHandled=true"
         List<String> fetchedTestCaseFolderUrls;
         List<String> fetchedTestCaseUrls;
         List<TestCase> testCases;
@@ -26,14 +26,13 @@ class App {
     }
 
 
-
     static TestCaseViewResponse fetchTestCaseView(String url) {
         //https://tools.akio.fr/squash/backend/test-case-view/21547?frontEndErrorIsHandled=true
     }
 
     static void fetchTestCases(String folderUrl,
-    List<String> fetchedTestCaseFolderUrls, List<String> fetchedTestCaseUrls,
-    List<TestCase> testCases) {
+                               List<String> fetchedTestCaseFolderUrls, List<String> fetchedTestCaseUrls,
+                               List<TestCase> testCases) {
         def view = SquashService.fetchFolderView(folderUrl)
         def response = WrapperService.toFolderViewResponse(view)
     }
